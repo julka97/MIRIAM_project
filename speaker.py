@@ -38,12 +38,10 @@ def say_hello():
     stream.close()
 
     p.terminate()
-
-
-def ask_watch():
+def ask_button():
     CHUNK = 10240
 
-    wf = wave.open("tts_output2.wav", 'rb')
+    wf = wave.open("tts_output5.wav", 'rb')
 
     p = pyaudio.PyAudio()
 
@@ -63,10 +61,11 @@ def ask_watch():
 
     p.terminate()
 
-def ask_button():
+
+def ask_watch():
     CHUNK = 10240
 
-    wf = wave.open("tts_output5.wav", 'rb')
+    wf = wave.open("tts_output2.wav", 'rb')
 
     p = pyaudio.PyAudio()
 

@@ -80,14 +80,19 @@ def if_pressed():
 
 speaker.load_answers()
 root = Tk()
+bg_color = '#%02x%02x%02x' % (12, 33, 66)
+button_color='#%02x%02x%02x' % (239, 97, 81)
+root.configure(background=bg_color)
 root.title("Filmoteka")
-labelx = Label(root, text="Spis Twoich Filmów:", bg="LightBLUE", font="Times 14 underline")
+labelx = Label(root, text="Spis Twoich Filmów:", bg=bg_color,fg="White", font="Times 14 underline")
 labely = Label(root,
                text="1.Edward Nożycoręki\n 2.Gnijąca panna młoda\n 3.Iluzjonista\n 4.Mroczne Cienie\n 5.Nietykalni\n 6.Planeta Małp\n 7.Podaj Dalej\n8. Niebo istnieje naprawdę\n9. Piękna i Bestia\n10. Jak zostać królem",
-               bg="LightBlue", font="Times 12")
+               bg=bg_color,fg="White", font="Times 12")
 
-b = Button(root, text=" MIRIAM", command=if_pressed, bg="RED", font="Times 18")
+b = Button(root, text=" MIRIAM",borderwidth=0.05, command=if_pressed, bg=button_color, font="Times 18")
+label0=Label(root, text="", bg=bg_color, font="Times 4")
 label1 = Label(root, text="Aby uruchomić program wciśnij przycisk MIRIAM", bg="White", font="Times 12")
+label0.pack(side=TOP)
 b.pack(side=TOP)
 labelx.pack()
 labely.pack()
