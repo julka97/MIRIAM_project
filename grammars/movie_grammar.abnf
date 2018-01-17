@@ -1,0 +1,70 @@
+#ABNF 1.0;
+language pl-pl;
+mode voice;
+root $root;
+tag-format <semantics/1.0-literals>;
+
+$root = $ogladanie | $opis | [film] $film;
+
+$ogladanie = $ogladanie1 | $ogladanie2 | $ogladanie3;
+$opis = $opis1 | $opis2 | $opis3 | $opis4;
+
+$ogladanie1 = [$zyczenie] coś $czynnosc;
+$ogladanie2 = [$zyczenie] $czynnosc $film_biernik;
+$ogladanie3 = [$zyczenie] $czynnosc [film] [$film_mianownik];
+
+$opis1 = [$zyczenie] $informacje1 [o filmie] [$film_mianownik];
+$opis2 = [$zyczenie] $informacje1 $film_miejscownik;
+$opis3 = [$zyczenie] $informacje2 filmu [$film_mianownik];
+$opis4 = [$zyczenie] $informacje2 [$film_dopelniacz];
+
+
+$zyczenie = chciałbym | chciałabym | chcę;
+$czynnosc = (oglądnąć | obejrzeć | zobaczyć) {ogladanie};
+$informacje1= dowiedzieć się {opis}| uzyskać informacje {opis} ;
+$informacje2 = zobaczyć opis {opis};
+
+$film = $film_mianownik | $film_dopelniacz | $film_biernik | $film_miejscownik;
+$film_mianownik = edward nożycoręki {Edward_Nożycoręki} |
+                gnijąca panna młoda {Gnijąca_panna_młoda} |
+                iluzjonista {Iluzjonista}|
+                mroczne cienie {Mroczne_cienie} |
+                nietykalni {Nietykalni} |
+                planeta małp {Planeta_małp} |
+                podaj dalej {Podaj_dalej} |
+                jak zostać królem {Jak_zostać_królem} |
+                piękna i bestia {Piękna_i_Bestia} |
+                niebo istnieje naprawdę {Niebo_istnieje_naprawdę} ;
+
+$film_biernik = edwarda nożycorękiego {Edward_Nożycoręki} |
+                gnijącą pannę młodą {Gnijąca_panna_młoda} |
+                iluzjonistę {Iluzjonista} |
+                mroczne cienie {Mroczne_cienie} |
+                nietykalnych {Nietykalni} |
+                planetę małp {Planeta_małp} |
+                podaj dalej {Podaj_dalej} |
+                jak zostać królem {Jak_zostać_królem} |
+                piękną i bestię {Piękna_i_Bestia} |
+                niebo istnieje naprawdę {Niebo_istnieje_naprawdę} ;
+
+$film_miejscownik = edwardzie nożycorękim {Edward_Nożycoręki} |
+                    gnijącej pannie młodej {Gnijąca_panna_młoda} |
+                    iluzjoniście {Iluzjonista} |
+                    mrocznych cieniach {Mroczne_cienie} |
+                    nietykalnych {Nietykalni} |
+                    planecie małp {Planeta_małp} |
+                    podaj dalej {Podaj_dalej} |
+                    jak zostać królem {Jak_zostać_królem} |
+                    pięknej i bestii {Piękna_i_Bestia} |
+                    niebo istnieje naprawdę {Niebo_istnieje_naprawdę} ;
+
+$film_dopelniacz =  edwarda nożycorękiego {Edward_Nożycoręki} |
+                    gnijącej panny młodej {Gnijąca_panna_młoda} |
+                    iluzjonisty {Iluzjonista} |
+                    mrocznych cieni {Mroczne_cienie} |
+                    nietykalnych {Nietykalni} |
+                    planety małp {Planeta_małp} |
+                    podaj dalej {Podaj_dalej} |
+                    jak zostać królem {Jak_zostać_królem} |
+                    pięknej i bestii {Piękna_i_Bestia} |
+                    niebo istnieje naprawdę {Niebo_istnieje_naprawdę} ;
