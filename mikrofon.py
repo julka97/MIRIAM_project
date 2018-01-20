@@ -51,4 +51,4 @@ def record():
     waveFile.close()
 
 
-record()
+# record()
