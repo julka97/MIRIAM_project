@@ -11,7 +11,7 @@ from python_speech_features import mfcc
 from python_speech_features import base
 from sklearn.mixture import GaussianMixture as GMM
 
-recordings=8
+recordings=19
 ramkowanie=0.025
 components=4
 delta_memory=2
